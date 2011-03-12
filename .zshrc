@@ -29,4 +29,15 @@ promptinit
 # Use the wunjo prompt theme
 prompt grb
 
+# Set title bar to directory path
+chpwd() {
+  [[ -t 1 ]] || return  
+  if  [[ $TERM == "xterm" || $TERM = "rxvt-unicode" ]]; then
+    print -Pn "\e]2;%~\a"
+  fi
+}
+
+function precmd { chpwd zsh "$PWD" }
+
+# RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
