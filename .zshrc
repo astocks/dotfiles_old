@@ -20,7 +20,7 @@ alias ll="ls -alh --color=auto"
 export LANG=en_US.UTF-8
 export TERM=rxvt-unicode
 
-setopt promptsubst
+setopt promptsubst auto_cd
 
 # Load the prompt theme system
 autoload -U promptinit
